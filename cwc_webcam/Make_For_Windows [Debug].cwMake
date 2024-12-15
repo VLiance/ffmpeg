@@ -3,7 +3,7 @@
 -{_sOpt}="Debug"
 >
 -{vOS_FlagLink}=
- -lavformat -lavcodec -lavutil -lswscale 
+ -lavformat -lavcodec -lavutil -lswscale   -lavdevice -lswresample -lswscale
  ;-lm
 
 

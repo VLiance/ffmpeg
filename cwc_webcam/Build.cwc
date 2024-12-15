@@ -1,0 +1,32 @@
+-{vFlag}=""
+>
+-{out}=out/{_sPlatform}_{_sConfig_Type}_{_sOpt}/
+-{obj}=obj/{_sPlatform}_{_sConfig_Type}_{_sOpt}/
+-{pIclude}=../include/
+-{pSrc}=../webcam/ 
+-{pLib}=../lib/ 
+>
+-{vIncl}=
+   -I {pIclude}
+   -I {pSrc}
+>
+;Build Engine
+-c  {pSrc} -o {obj}/
+   -{vIncl} -{vOS_Flag}
+>
+;Generate Dynamic Lib
+;-o obj/{sOut}/lib/ -#To Lib/{sOut}/Chipmunk.{_sDynamic}
+>
+;Generate Static Lib
+;-o obj/{sOut}/lib/ -#To Lib/{sOut}/libChipmunk.a
+>
+;Generate executable
+-o {obj}/ -#To {out}/App.*  -L {pLib}
+   {vOS_FlagLink}
+>
+
+-#Copy ../dll/ {out}
+-#Copy ../vid/ {out}
+>
+-#Run
+
